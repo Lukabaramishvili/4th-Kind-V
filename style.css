@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+:root {
+    --main-color: #ffffff;
+    --text-color: #000000;
+    --highlight-color: #2727e6;
+  }
+  
+  body.dark-mode {
+    --main-color: #000000;
+    --text-color: #ffffff;
+    --highlight-color: #ff4141;
+}
+
+body {
+    font-family: 'Inter';
+    font-size: 24px;
+    line-height: 40px;
+
+    background-color: var(--main-color);
+    background-image: url(./images/grid.svg);
+    background-position: center center;
+
+    color: var(--text-color);
+}
+
+h1 {
+    position: fixed;
+    top: 32px;
+    left: 32px;
+}
+
+h1 rect {
+    fill: var(--highlight-color);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--highlight-color);
+}
+
+a.dark-mode-toggle {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+}
+
+a.dark-mode-toggle circle {
+    fill: currentColor;
+}
+
+a.dark-mode-toggle rect {
+    stroke: currentColor;
+}
+
+a.menu-toggle {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 1;
+}
+
+a.menu-toggle rect{
+    fill: currentColor;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 600px;
+    height: 700px;
+    background-color: var(--main-color);
+    padding: 48px;
+    transform: translate(100%, 0);
+    transition: transform 0.5s 0s;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+nav.fake-mid {
+    background-color: var(--highlight-color);
+    transition-delay: 0.1s;
+}
+
+nav.fake-back {
+    background-color: var(--text-color);
+    transition-delay: 0.2s;
+}
+
+body.nav-open nav {
+    transform: translate(0, 0);
+    transition-delay: 0.2s;
+}
+
+body.nav-open nav.fake-mid {
+    transition-delay: 0.1s;
+}
+
+body.nav-open nav.fake-back {
+    transition-delay: 0s;
+}
+
+nav div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav div.internal {
+    font-size: 48px;
+    line-height: 64px;
+    flex: 1;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+a.dark-mode-toggle g.toggle circle {
+    transition: transform 0.5s;
+}
+
+a.dark-mode-toggle:hover g.toggle circle{
+    transform: scale(1.75);
+}
