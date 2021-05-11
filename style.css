@@ -131,3 +131,14 @@ a.dark-mode-toggle g.toggle circle {
 a.dark-mode-toggle:hover g.toggle circle{
     transform: scale(1.75);
 }
+
+div.wipe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--highlight-color);
+    z-index: 3;
+    transition: background-color 0.0001s 2s;
+}

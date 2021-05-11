@@ -27,7 +27,6 @@ menuToggle.addEventListener("click", () => {
 });
 
 darkModeToggle.addEventListener("click", () => {
-    bodyTag.classList.toggle("dark-mode");
     if (bodyTag.classList.contains("dark-mode")) {
         darkModeToggleText.innerHTML = "Light mode";
         gsap.to("g.toggle", { x: 43})
@@ -35,6 +34,16 @@ darkModeToggle.addEventListener("click", () => {
         darkModeToggleText.innerHTML = "Dark mode";
         gsap.to("g.toggle", { x: 19})
     }
+
+    const timeline = gsap.timeline();
+
+    timeline
+    .set("div.wipe", { height: "0%", top: "0%"})
+    .to("div.wipe", { height: "100%", duration: 1})
+    .add(() => {
+        bodyTag.classList.toggle("dark-mode")
+    })
+    .to("div.wipe", { height: "0%", top: "100%", duration: 1})
 });
 
 const updateDarkMode = () => {
