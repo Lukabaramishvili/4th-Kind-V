@@ -62,12 +62,3 @@ updateDarkMode();
 mqDark.addListener(() => {
     updateDarkMode();
 })
-
-const spiralTimeline = gsap.timeline({
-    repeat: -1
-})
-
-spiralTimeline
-    .to("svg.spiral rect", { 
-        rotation: 90 
-    })

@@ -18,14 +18,25 @@ body {
     line-height: 40px;
 
     background-color: var(--main-color);
-    background-image: url(./images/grid.svg);
-    background-position: center center;
 
     color: var(--text-color);
+}
+
+section {
+    background-image: url(./images/grid.svg);
+    background-position: center center;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    transform: translate(0px, 0);
+    pointer-events: none;
+    transition: transform 0.5s;
+}
+
+body.nav-open section{
+    transform: translate(-100px, 0);
 }
 
 h1 {
@@ -78,7 +89,7 @@ nav {
     right: 0;
     width: 100%;
     max-width: 600px;
-    height: 700px;
+    height: 100%;
     background-color: var(--main-color);
     padding: 48px;
     transform: translate(100%, 0);
@@ -147,17 +158,64 @@ div.wipe {
     transition: background-color 0.0001s 2s;
 }
 
-svg.spiral {
-    border: 2px solid var(--highlight-color);
+@keyframes shape-animation {
+    0% {
+      transform: rotate(0);
+    }
+    49.999% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(0);
+    }
   }
   
-  svg.spiral rect {
+  
+  svg.shapes {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 80vw;
+    height: 80vw;
+    
+    max-width: 544px;
+    max-height: 544px;
+    
+    border:  2px solid var(--highlight-color);
+    
+    transition: transform 0.5s;
+  }
+  
+  body.open svg.shapes {
+      transform: translate(calc(-50% - 64px), -50%);
+  }
+  
+  svg.shapes rect {
     fill: var(--highlight-color);
     fill-opacity: 0;
+    
     stroke: var(--highlight-color);
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+    
+    transition: fill-opacity 0.25s;
+    animation: shape-animation 4s infinite cubic-bezier(0.46,0.03,0.52,0.96);
   }
   
-  svg.spiral rect:hover {
-    fill-opacity: 0.25;
+  svg.shapes rect:hover {
+    fill-opacity: 0.2;
   }
-
+  
+  svg.shapes g:nth-child(2) rect {
+    animation-delay: 0.5s;
+  }
+  
+  svg.shapes g:nth-child(3) rect {
+    animation-delay: 1s;
+  }
+  
+  svg.shapes g:nth-child(4) rect {
+    animation-delay: 1.5s;
+  }

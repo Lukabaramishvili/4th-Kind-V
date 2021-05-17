@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blowbon</title>
+    <link rel="stylesheet" href="/_base.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -37,11 +38,19 @@
     </a>
 
     <section>
-        <svg width="544" height="544" viewBox="0 0 544 544" fill="none" xmlns="http://www.w3.org/2000/svg" class="spiral">
-          <rect x="18.4778" y="125.629" width="414" height="414" transform="rotate(-15 18.4778 125.629)" stroke="black" stroke-width="2"></rect>
-          <rect x="129" y="129" width="289" height="289" stroke="black" stroke-width="2"></rect>
-          <rect x="216.139" y="175.245" width="158" height="158" transform="rotate(15 216.139 175.245)" stroke="black" stroke-width="2"></rect>
-          <rect x="257" y="257" width="30" height="30" stroke="black" stroke-width="2"></rect>
+        <svg width="544" height="544" viewBox="0 0 544 544" class="shapes" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(272, 272) rotate(-15) ">
+            <rect x="-207" y="-207" width="414" height="414"></rect>
+            </g>
+            <g transform="translate(272, 272)">
+            <rect x="-144" y="-144" width="288" height="288"></rect>
+            </g>
+            <g transform="translate(272, 272) rotate(15) ">
+            <rect x="-79" y="-79" width="158" height="158"></rect>
+            </g>
+            <g transform="translate(272, 272)">
+            <rect x="-16" y="-16" width="32" height="32"></rect>
+            </g>
         </svg>
     </section>
 
@@ -67,6 +76,6 @@
     </div>
 
     <script src="main.js"></script>
-    <script src="gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 </body>
 </html>
