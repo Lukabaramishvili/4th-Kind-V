@@ -198,7 +198,6 @@ div.wipe {
     
     stroke: var(--highlight-color);
     stroke-width: 2px;
-    vector-effect: non-scaling-stroke;
     
     transition: fill-opacity 0.25s;
     animation: shape-animation 4s infinite cubic-bezier(0.46,0.03,0.52,0.96);
@@ -219,3 +218,36 @@ div.wipe {
   svg.shapes g:nth-child(4) rect {
     animation-delay: 1.5s;
   }
+
+  @media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    top: 24px;
+    left: 24px;
+  }
+  
+  a.dark-mode-toggle {
+    position: fixed;
+    top: 650px;
+    bottom: 24px;
+    left: 24px;
+  }
+  
+  a.menu-toggle {
+    top: 24px;
+    right: 24px;
+  }
+  
+  nav div.internal {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  a.menu-toggle span, a.dark-mode-toggle span {
+    display: none;
+  }
+  
+}
